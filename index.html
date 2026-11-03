@@ -222,6 +222,16 @@
     .footer-links a:hover { color: #fff; }
     .footer-bottom { padding-top: 1.5rem; text-align: center; font-size: 0.8rem; color: #8b9c93; }
     .ai-disclaimer { margin-top: 0.4rem; font-style: italic; font-size: 0.75rem; }
+    .legal { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.1rem 0; }
+    .legal summary { cursor: pointer; list-style: none; font-size: 0.85rem; color: #c7d2cc; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .legal summary::-webkit-details-marker { display: none; }
+    .legal summary::after { content: "+"; font-size: 1.1rem; color: #d9c3a3; transition: transform .2s; }
+    .legal[open] summary::after { transform: rotate(45deg); }
+    .legal summary:hover { color: #fff; }
+    .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.25rem; }
+    @media (max-width: 760px) { .legal-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
+    .legal h4 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.6rem; }
+    .legal p { font-size: 0.82rem; color: #9fb0a7; margin-bottom: 0.5rem; line-height: 1.55; }
 
     /* ---------- Founder portrait (About) ---------- */
     .founder { position: relative; }
@@ -421,10 +431,10 @@
           <!-- Founder photo: save a real photo as thomas.jpg next to index.html and it replaces the drawing automatically -->
           <div class="founder">
             <div class="founder-photo">
-              <img src="thomas.jpg" alt="Thomas Holmboe Bang, founder of NordicAzur" data-i18n-alt="founder_img_alt" onerror="this.onerror=null;this.src='thomas-avatar.svg'">
+              <img src="thomas.jpg" alt="Thomas Holmboe-Lagier, founder of NordicAzur" data-i18n-alt="founder_img_alt" onerror="this.onerror=null;this.src='thomas-avatar.svg'">
             </div>
             <div class="founder-card">
-              <strong>Thomas Holmboe Bang</strong>
+              <strong>Thomas Holmboe-Lagier</strong>
               <span data-i18n="founder_role">Founder · Vence</span>
             </div>
           </div>
@@ -688,10 +698,36 @@
           <a href="#pricing" data-i18n="nav_pricing_f">Packages</a>
           <a href="#faq" data-i18n="nav_faq_f">FAQ</a>
           <a href="#contact" data-i18n="nav_contact_f">Contact</a>
+          <a href="#legal" class="legal-open" data-i18n="legal_link_f">Legal notice</a>
         </div>
       </div>
+
+      <!-- ===== Legal notice & privacy (mentions légales) ===== -->
+      <details class="legal" id="legal">
+        <summary data-i18n="legal_link">Legal notice & privacy</summary>
+        <div class="legal-grid">
+          <div>
+            <h4 data-i18n="legal_title">Legal notice</h4>
+            <p data-i18n="legal_publisher">NordicAzur is the trade name of Thomas Holmboe-Lagier, sole trader (entrepreneur individuel, micro-entreprise), 120 Chemin Sainte Anne, 06140 Vence, France.</p>
+            <p><span data-i18n="legal_siret_label">SIRET number:</span> 131 790 826 00013</p>
+            <p data-i18n="legal_vat">VAT not applicable, article 293 B of the French General Tax Code (CGI).</p>
+            <p><span data-i18n="legal_contact_label">Contact:</span> contact@nordicazur.com · +33 6 72 91 91 59</p>
+            <p data-i18n="legal_director">Publication director: Thomas Holmboe-Lagier.</p>
+            <p data-i18n="legal_host">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+            <p data-i18n="legal_ip">All texts, photos and the NordicAzur logo belong to NordicAzur and may not be reused without permission.</p>
+          </div>
+          <div>
+            <h4 data-i18n="privacy_title">Privacy</h4>
+            <p data-i18n="privacy_1">When you send the contact form, we receive your name and email address and, if you provide them, your phone number, town and message. We use this information only to answer your enquiry and prepare a proposal.</p>
+            <p data-i18n="privacy_2">The form is delivered by email through FormSubmit (formsubmit.co). We never sell or share your data, and we keep it for a maximum of 3 years after our last contact.</p>
+            <p data-i18n="privacy_3">You can ask to see, correct or delete your data at any time by writing to contact@nordicazur.com. You can also file a complaint with the French data protection authority, the CNIL (www.cnil.fr).</p>
+            <p data-i18n="privacy_4">This website uses no advertising or tracking cookies. Your language choice is saved only in your own browser. Fonts are loaded from Google Fonts.</p>
+          </div>
+        </div>
+      </details>
+
       <div class="footer-bottom">
-        <p>&copy; <span id="year">2026</span> NordicAzur · Vence, France · <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p>&copy; <span id="year">2026</span> NordicAzur · Thomas Holmboe-Lagier, EI · SIRET 131 790 826 00013 · Vence, France · <span data-i18n="footer_rights">All rights reserved.</span></p>
         <p class="ai-disclaimer" data-i18n="ai_disclaimer">This website uses AI-assisted automatic translation to serve our international clients in several languages.</p>
       </div>
     </div>
@@ -764,6 +800,12 @@
       nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); }); });
 
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Footer "Legal notice" link opens the legal section
+      var legal = document.getElementById("legal");
+      function openLegal() { if (location.hash === "#legal" && legal) legal.open = true; }
+      window.addEventListener("hashchange", openLegal); openLegal();
+      document.querySelectorAll(".legal-open").forEach(function (a) { a.addEventListener("click", function () { legal.open = true; }); });
     })();
   </script>
 </body>
