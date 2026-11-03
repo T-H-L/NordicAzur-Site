@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  NordicAzur website — ENGLISH MASTER VERSION
+  ------------------------------------------------------------
+  Edit the English text directly in this file.
+  Every text with a data-i18n="..." label is translated.
+  After saving your changes, double-click  translate.bat
+  and all other languages are updated automatically.
+
+  To add a NEW text: give its tag a new, unique label, e.g.
+     <p data-i18n="my_new_text">My new English text</p>
+  (Only plain text inside a labelled tag — no tags inside it.)
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title">NordicAzur · Property Care & Concierge on the French Riviera</title>
+  <meta name="description" content="Reliable property care and concierge services for second-home owners around Vence, Saint-Paul-de-Vence and the French Riviera. Regular inspections, photo reports and local support in Scandinavian languages, English and French.">
+  <link rel="icon" href="35030.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1b4332;
+      --primary-hover: #2d6a4f;
+      --primary-soft: #e8f0eb;
+      --accent: #a07a4c;
+      --accent-soft: #f6efe5;
+      --bg: #ffffff;
+      --bg-alt: #f9f7f3;
+      --text: #14211b;
+      --muted: #5b6660;
+      --border: #e6e1d8;
+      --radius: 14px;
+      --shadow: 0 18px 40px -18px rgba(20, 33, 27, 0.25);
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .section-title { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.1; color: var(--text); margin-bottom: 0.9rem; }
+    .section-intro { color: var(--muted); font-size: 1.05rem; max-width: 680px; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .section-head .section-intro { margin: 0 auto; }
+    section { padding: 5.5rem 0; }
+    #contact { background: var(--bg-alt); border-top: 1px solid var(--border); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--sans); font-weight: 600; font-size: 0.98rem; padding: 0.95rem 1.6rem; border-radius: 999px; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--primary); border-color: var(--primary); }
+    .btn-ghost:hover { background: var(--primary); color: #fff; }
+
+    /* ---------- Header ---------- */
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 78px; }
+    .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .logo img { height: 58px; width: auto; object-fit: contain; }
+    .logo-text { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--primary); }
+    .main-nav { display: flex; align-items: center; gap: 1.75rem; }
+    .main-nav a { text-decoration: none; font-weight: 500; font-size: 0.92rem; color: var(--text); position: relative; }
+    .main-nav a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1.5px; background: var(--accent); transition: width .2s; }
+    .main-nav a:hover::after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .lang-select { appearance: none; -webkit-appearance: none; padding: 0.5rem 2rem 0.5rem 0.85rem; border-radius: 999px; border: 1px solid var(--border); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235b6660' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 0.8rem center; font-family: inherit; font-size: 0.85rem; color: var(--text); cursor: pointer; }
+    .header-cta { padding: 0.65rem 1.2rem; font-size: 0.88rem; }
+    .menu-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 10px; width: 42px; height: 42px; cursor: pointer; align-items: center; justify-content: center; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; width: 18px; height: 1.5px; background: var(--text); position: relative; transition: .2s; }
+    .menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+    .menu-toggle span::before { top: -6px; } .menu-toggle span::after { top: 6px; }
+
+    @media (max-width: 960px) {
+      .menu-toggle { display: inline-flex; }
+      .header-cta { display: none; }
+      .main-nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 0.5rem 1.25rem 1.25rem; display: none; box-shadow: 0 12px 24px -12px rgba(0,0,0,.15); }
+      .main-nav.open { display: flex; }
+      .main-nav a { padding: 0.85rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
+      .main-nav a::after { display: none; }
+      .logo img { height: 48px; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 4.5rem 0 5rem; background: linear-gradient(180deg, var(--bg-alt) 0%, #fff 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: center; }
+    .hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.5rem, 5vw, 3.75rem); line-height: 1.05; margin-bottom: 1.25rem; }
+    .hero-lead { font-size: 1.08rem; font-weight: 500; color: var(--text); margin-bottom: 0.9rem; }
+    .hero-sublead { font-family: var(--serif); font-size: 1.35rem; font-style: italic; color: var(--accent); margin-bottom: 0.9rem; }
+    .hero-desc { color: var(--muted); margin-bottom: 1.5rem; }
+    .checklist { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 1.25rem; margin-bottom: 2rem; }
+    .checklist li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; font-weight: 500; }
+    .checklist li::before { content: "✓"; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 22px; height: 22px; margin-top: 1px; border-radius: 50%; background: var(--primary-soft); color: var(--primary); font-size: 0.72rem; font-weight: 700; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+    .cta-note { font-size: 0.85rem; color: var(--muted); max-width: 520px; }
+
+    .hero-visual { position: relative; }
+    .hero-photo { border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 4 / 5; background: linear-gradient(135deg, #cfe1d6, #e9dcc6); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-badge { position: absolute; left: -1.5rem; bottom: 2rem; background: #fff; border-radius: 16px; padding: 1rem 1.25rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 0.85rem; max-width: 280px; }
+    .hero-badge-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .hero-badge strong { display: block; font-size: 0.95rem; }
+    .hero-badge span { font-size: 0.82rem; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .hero { padding: 2.5rem 0 3.5rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo { aspect-ratio: 4 / 3; }
+      .hero-badge { left: 1rem; bottom: -1.5rem; }
+      .checklist { grid-template-columns: 1fr; }
+      .hero-actions .btn { flex: 1 1 100%; }
+    }
+
+    /* ---------- Areas strip ---------- */
+    .areas { padding: 1.75rem 0; background: var(--primary); color: #fff; }
+    .areas-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.6rem 1.75rem; text-align: center; }
+    .areas-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #d9c3a3; }
+    .areas-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.4rem; font-family: var(--serif); font-size: 1.2rem; }
+
+    /* ---------- Features ---------- */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+    .feature { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.75rem; transition: transform .2s, box-shadow .2s; }
+    .feature:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--primary-soft); color: var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .feature-icon svg { width: 26px; height: 26px; }
+    .feature h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .feature p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- How it works ---------- */
+    .how { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .step { position: relative; padding: 2rem 1.75rem; background: #fff; border-radius: var(--radius); border: 1px solid var(--border); }
+    .step-num { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
+    .step h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; margin-bottom: 3.5rem; }
+    .about-photo { border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow); background: linear-gradient(135deg, #e9dcc6, #cfe1d6); }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1.02rem; }
+    .about-text p.about-intro { color: var(--text); font-size: 1.12rem; font-weight: 500; }
+    .about-quote { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--primary); border-left: 3px solid var(--accent); padding-left: 1.25rem; margin-top: 1.5rem; line-height: 1.35; }
+    .values-title { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; text-align: center; margin-bottom: 1.75rem; }
+    .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .value { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.4rem; }
+    .value h4 { font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 0.45rem; }
+    .value p { font-size: 0.9rem; color: var(--muted); }
+    @media (max-width: 1000px) { .values { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-photo { aspect-ratio: 4 / 3; } }
+    @media (max-width: 560px) { .values { grid-template-columns: 1fr; } }
+
+    /* ---------- Pricing ---------- */
+    .pricing { background: var(--bg-alt); border-top: 1px solid var(--border); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+    @media (max-width: 1000px) { .pricing-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }
+    .plan { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 2.25rem 1.85rem; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+    .plan:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .plan.popular { border: 2px solid var(--primary); box-shadow: var(--shadow); }
+    .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; white-space: nowrap; }
+    .plan h3 { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; line-height: 1.15; margin-bottom: 0.4rem; }
+    .plan-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem; min-height: 2.9em; }
+    .price { font-size: 1.9rem; font-weight: 700; color: var(--primary); line-height: 1.1; }
+    .price-unit { font-size: 0.9rem; font-weight: 500; color: var(--muted); }
+    .price-note { font-size: 0.8rem; color: var(--muted); margin: 0.35rem 0 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .plan ul { list-style: none; flex-grow: 1; margin-bottom: 1.75rem; }
+    .plan li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.45rem 0; font-size: 0.9rem; color: var(--text); }
+    .plan li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .plan .btn { width: 100%; }
+
+    .alacarte { margin-top: 3.5rem; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 2.5rem 2rem; }
+    .alacarte h3 { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; text-align: center; margin-bottom: 0.35rem; }
+    .alacarte-intro { text-align: center; color: var(--muted); margin-bottom: 2rem; }
+    .alacarte-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 900px) { .alacarte-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .alacarte-grid { grid-template-columns: 1fr; } .alacarte { padding: 2rem 1.25rem; } }
+    .alacarte-item { display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; background: var(--bg-alt); border-radius: 12px; font-size: 0.92rem; font-weight: 500; }
+    .alacarte-item .ico { font-size: 1.3rem; flex-shrink: 0; }
+
+    /* ---------- Contact ---------- */
+    .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-card { background: var(--primary); color: #fff; border-radius: 18px; padding: 2.25rem 2rem; }
+    .contact-card h3 { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .info-item { display: flex; gap: 0.9rem; margin-bottom: 1.4rem; }
+    .info-item .ico { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .info-item .ico svg { width: 18px; height: 18px; }
+    .info-item strong { display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #d9c3a3; font-weight: 600; margin-bottom: 0.15rem; }
+    .info-item a, .info-item span.val { color: #fff; text-decoration: none; font-size: 0.98rem; }
+    .info-item a:hover { text-decoration: underline; }
+    .btn-whatsapp { background: #fff; color: var(--primary); width: 100%; margin-top: 0.5rem; }
+    .btn-whatsapp:hover { background: var(--accent-soft); }
+
+    .contact-form { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 2.25rem 2rem; box-shadow: var(--shadow); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } .contact-form, .contact-card { padding: 1.75rem 1.25rem; } }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: var(--bg-alt); transition: border-color .2s, background .2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: #fff; }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .contact-form .btn { width: 100%; border-radius: 10px; }
+    .form-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+
+    /* ---------- Footer ---------- */
+    footer { background: #10261d; color: #c7d2cc; padding: 3rem 0 2rem; font-size: 0.9rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center; padding-bottom: 1.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand { font-family: var(--serif); font-size: 1.6rem; color: #fff; font-weight: 600; }
+    .footer-tagline { font-size: 0.85rem; color: #9fb0a7; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-links a { text-decoration: none; color: #c7d2cc; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom { padding-top: 1.5rem; text-align: center; font-size: 0.8rem; color: #8b9c93; }
+    .ai-disclaimer { margin-top: 0.4rem; font-style: italic; font-size: 0.75rem; }
+
+    /* ---------- Founder portrait (About) ---------- */
+    .founder { position: relative; }
+    .founder-photo { border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow); background: var(--accent-soft); }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .founder-card { position: absolute; right: -1.25rem; bottom: 1.75rem; background: #fff; border-radius: 14px; padding: 0.9rem 1.2rem; box-shadow: var(--shadow); }
+    .founder-card strong { display: block; font-family: var(--serif); font-size: 1.3rem; line-height: 1.1; color: var(--text); }
+    .founder-card span { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+    @media (max-width: 900px) { .founder { max-width: 420px; margin: 0 auto; width: 100%; } .founder-card { right: 1rem; bottom: -1.25rem; } }
+
+    /* ---------- Photo band ---------- */
+    .photo-band { position: relative; padding: 0; min-height: 380px; display: flex; align-items: center; background: #2d4a3c linear-gradient(135deg, #1b4332, #6b8f7a); overflow: hidden; }
+    .photo-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .photo-band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,38,29,.78) 0%, rgba(16,38,29,.35) 65%, rgba(16,38,29,.15) 100%); }
+    .photo-band .container { position: relative; z-index: 1; padding-top: 4rem; padding-bottom: 4rem; width: 100%; }
+    .photo-band blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.15; color: #fff; max-width: 620px; }
+    .photo-band cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #e3cfae; }
+
+    /* ---------- FAQ ---------- */
+    .faq-list { max-width: 820px; margin: 0 auto; }
+    .faq-list details { border-bottom: 1px solid var(--border); padding: 1.15rem 0; }
+    .faq-list summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-weight: 600; font-size: 1.02rem; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: "+"; font-family: var(--serif); font-size: 1.8rem; line-height: 1; color: var(--accent); flex-shrink: 0; transition: transform .2s; }
+    .faq-list details[open] summary::after { transform: rotate(45deg); }
+    .faq-list details p { color: var(--muted); margin-top: 0.6rem; font-size: 0.96rem; max-width: 720px; }
+
+    /* ---------- QR + form extras ---------- */
+    .qr-box { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); }
+    .qr-box img { width: 104px; height: 104px; background: #fff; border-radius: 10px; padding: 6px; flex-shrink: 0; }
+    .qr-box strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .qr-box span { font-size: 0.85rem; color: #c7d6cd; }
+    .form-group select { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: var(--bg-alt); color: var(--text); }
+    .form-group select:focus { outline: none; border-color: var(--primary); background: #fff; }
+    .form-intro { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .form-intro-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
+
+    .wa-float { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -8px rgba(0,0,0,.35); transition: transform .2s; }
+    .wa-float:hover { transform: scale(1.06); }
+    .wa-float svg { width: 30px; height: 30px; }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="NordicAzur">
+        <img src="35030.png" alt="NordicAzur" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>NordicAzur</span>'">
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#pricing" data-i18n="nav_pricing">Packages</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect" aria-label="Language">
+          <option value="en">EN · English</option>
+          <option value="da">DA · Dansk</option>
+          <option value="sv">SV · Svenska</option>
+          <option value="no">NO · Norsk</option>
+          <option value="fr">FR · Français</option>
+          <option value="de">DE · Deutsch</option>
+          <option value="nl">NL · Nederlands</option>
+          <option value="it">IT · Italiano</option>
+          <option value="ru">RU · Русский</option>
+        </select>
+        <a href="#contact" class="btn btn-primary header-cta" data-i18n="header_cta">Free consultation</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="hero_tag">Property Care & Concierge · French Riviera</span>
+          <h1 data-i18n="hero_title">Peace of mind for your home on the French Riviera</h1>
+          <p class="hero-lead" data-i18n="hero_lead">Reliable property care for second-home owners around Vence, Saint-Paul-de-Vence, Tourrettes-sur-Loup, Saint-Jeannet, La Colle-sur-Loup, Cagnes-sur-Mer and nearby villages.</p>
+          <p class="hero-sublead" data-i18n="hero_sublead">Your home deserves attention, even when you are away.</p>
+          <p class="hero-desc" data-i18n="hero_desc">NordicAzur provides personal property inspections, clear photo reports and practical local support, so you can keep an eye on your home throughout the year.</p>
+
+          <ul class="checklist">
+            <li data-i18n="hero_check_1">Regular property visits</li>
+            <li data-i18n="hero_check_2">Photo reports after every inspection</li>
+            <li data-i18n="hero_check_3">Coordination of maintenance by agreement</li>
+            <li data-i18n="hero_check_4">Personal contact and clear communication</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Book a free property consultation</a>
+            <a href="#pricing" class="btn btn-ghost" data-i18n="hero_cta2">View packages</a>
+          </div>
+          <p class="cta-note" data-i18n="cta_note">Tell us about your property and how often you would like it checked. We will suggest a service plan that suits your needs.</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <img src="villa.jfif" alt="Villa on the French Riviera" data-i18n-alt="hero_img_alt" onerror="this.style.display='none'">
+          </div>
+          <div class="hero-badge">
+            <div class="hero-badge-icon">📍</div>
+            <div>
+              <strong data-i18n="hero_badge_title">Based in Vence</strong>
+              <span data-i18n="hero_badge_text">Local, personal and close by when you need us</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AREAS ================= -->
+    <div class="areas">
+      <div class="container areas-inner">
+        <span class="areas-label" data-i18n="areas_label">Areas we cover</span>
+        <div class="areas-list">
+          <span>Vence</span><span>Saint-Paul-de-Vence</span><span>Tourrettes-sur-Loup</span><span>Saint-Jeannet</span><span>La Colle-sur-Loup</span><span>Cagnes-sur-Mer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SERVICES / WHY ================= -->
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="features_tag">Why NordicAzur</span>
+          <h2 class="section-title" data-i18n="features_title">Scandinavian care, Riviera know-how</h2>
+          <p class="section-intro" data-i18n="features_intro">A trusted pair of eyes and hands on the Côte d'Azur, so you can enjoy your home without worrying about it while you are away.</p>
+        </div>
+        <div class="grid-3">
+          <div class="feature">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+            <h3 data-i18n="feat_1_title">Multilingual bridge</h3>
+            <p data-i18n="feat_1_desc">Seamless communication in Scandinavian languages and English, combined with local French know-how. No language barrier with local craftsmen and suppliers.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+            <h3 data-i18n="feat_2_title">Digital photo reports</h3>
+            <p data-i18n="feat_2_desc">Clear status updates with photos and videos sent directly to your phone after every inspection visit.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <h3 data-i18n="feat_3_title">Truly local presence</h3>
+            <p data-i18n="feat_3_desc">Based in Vence, for fast response to weather alerts, emergency call-outs and keyholding needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="how" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="how_tag">How it works</span>
+          <h2 class="section-title" data-i18n="how_title">Simple, personal and transparent</h2>
+        </div>
+        <div class="grid-3">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3 data-i18n="how_1_title">Free consultation</h3>
+            <p data-i18n="how_1_desc">We talk about your property, your stays and your expectations, and visit the property together if possible.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3 data-i18n="how_2_title">Your tailored plan</h3>
+            <p data-i18n="how_2_desc">You choose the package and visit frequency that suit your home, with extra services only when you need them.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3 data-i18n="how_3_title">Visits & reports</h3>
+            <p data-i18n="how_3_desc">Your home is checked regularly and you receive a photo report after every visit, so you always know how things stand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PHOTO BAND ================= -->
+    <div class="photo-band">
+      <img src="villa2.jpg" alt="Home on the Côte d'Azur" data-i18n-alt="band_img_alt" onerror="this.style.display='none'">
+      <div class="container">
+        <blockquote data-i18n="band_quote">We look after your home as carefully as if it were our own.</blockquote>
+        <cite data-i18n="band_cite">NordicAzur · Vence, Côte d'Azur</cite>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Founder photo: save a real photo as thomas.jpg next to index.html and it replaces the drawing automatically -->
+          <div class="founder">
+            <div class="founder-photo">
+              <img src="thomas.jpg" alt="Thomas Holmboe-Lagier, founder of NordicAzur" data-i18n-alt="founder_img_alt" onerror="this.onerror=null;this.src='thomas-avatar.svg'">
+            </div>
+            <div class="founder-card">
+              <strong>Thomas Holmboe-Lagier</strong>
+              <span data-i18n="founder_role">Founder · Vence</span>
+            </div>
+          </div>
+          <div class="about-text">
+            <span class="eyebrow" data-i18n="about_tag">About NordicAzur</span>
+            <h2 class="section-title" data-i18n="about_title">Peace of mind and quality in property care</h2>
+            <p class="about-intro" data-i18n="about_intro">Behind NordicAzur is Thomas, a dedicated and detail-oriented Dane who has lived in Vence on the French Riviera with his family for many years.</p>
+            <p data-i18n="about_lead">With more than 15 years of professional experience in consulting and project management, Thomas has built NordicAzur on core values such as reliability, clear communication and uncompromising quality.</p>
+            <p class="about-quote" data-i18n="about_footer">Whether you need supervision of your holiday home, coordination of craftsmen or help with ongoing maintenance and practical tasks, NordicAzur is your trusted partner on the Côte d'Azur.</p>
+          </div>
+        </div>
+
+        <h3 class="values-title" data-i18n="about_why_title">What you can count on</h3>
+        <div class="values">
+          <div class="value">
+            <h4 data-i18n="about_card1_title">Scandinavian structure & punctuality</h4>
+            <p data-i18n="about_card1_desc">Agreements are kept to the letter and your home is looked after to the highest standard.</p>
+          </div>
+          <div class="value">
+            <h4 data-i18n="about_card2_title">Local presence & network</h4>
+            <p data-i18n="about_card2_desc">Many years of living in the area mean in-depth knowledge of local conditions, challenges and carefully selected suppliers.</p>
+          </div>
+          <div class="value">
+            <h4 data-i18n="about_card3_title">Direct & transparent communication</h4>
+            <p data-i18n="about_card3_desc">One dedicated personal contact, with updates and reports in your own language: Danish, English or French.</p>
+          </div>
+          <div class="value">
+            <h4 data-i18n="about_card4_title">Personal engagement</h4>
+            <p data-i18n="about_card4_desc">Your property is never just another number. You get attentive, tailored service, for the big picture and the small details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PACKAGES ================= -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="pricing_tag">Packages</span>
+          <h2 class="section-title" data-i18n="pricing_title">Tailored care packages</h2>
+          <p class="section-intro" data-i18n="pricing_subtitle">Clear care plans adapted to the specific needs of your property. Final price depends on the size of the property and its grounds.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Package 1 -->
+          <div class="plan">
+            <h3 data-i18n="tier1_title">Essential Inspection</h3>
+            <p class="plan-desc" data-i18n="tier1_desc">Regular checks and reporting for homes that are empty for long periods.</p>
+            <div class="price"><span data-i18n="tier1_price">€130 – €180</span> <span class="price-unit" data-i18n="per_month">/ month</span></div>
+            <p class="price-note" data-i18n="commitment">Minimum 6- or 12-month commitment</p>
+            <ul>
+              <li data-i18n="tier1_f1">2 physical property inspections per month</li>
+              <li data-i18n="tier1_f2">Secure keyholding, mail collection and urgent forwarding</li>
+              <li data-i18n="tier1_f3">Visual checks after storms and weather alerts (Météo-France)</li>
+              <li data-i18n="tier1_f4">Perimeter and security check (gates, fences, doors, shutters)</li>
+              <li data-i18n="tier1_f5">Status check of alarm keypad, motion detectors and cameras</li>
+              <li data-i18n="tier1_f6">Running taps and flushing toilets, brief heating/AC test</li>
+              <li data-i18n="tier1_f7">Water and electricity meter readings to spot leaks early</li>
+              <li data-i18n="tier1_f8">Visual check of grounds and pool (leaks, green water)</li>
+              <li data-i18n="tier1_f9">Digital photo report sent after every visit</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="select_plan">Choose this package</a>
+          </div>
+
+          <!-- Package 2 -->
+          <div class="plan popular">
+            <span class="badge" data-i18n="popular_badge">Most popular</span>
+            <h3 data-i18n="tier2_title">Comfort Home</h3>
+            <p class="plan-desc" data-i18n="tier2_desc">Weekly care and a home that is ready when you arrive.</p>
+            <div class="price"><span data-i18n="tier2_price">€280 – €400</span> <span class="price-unit" data-i18n="per_month_2">/ month</span></div>
+            <p class="price-note" data-i18n="commitment_2">Minimum 6- or 12-month commitment</p>
+            <ul>
+              <li data-i18n="tier2_f1">4 inspections per month (weekly)</li>
+              <li data-i18n="tier2_f2">Everything in Essential Inspection</li>
+              <li data-i18n="tier2_f3">Pre-arrival preparation (hot water, heating/AC, lights)</li>
+              <li data-i18n="tier2_f4">Post-departure walkthrough and secure lock-up</li>
+              <li data-i18n="tier2_f5">Potted plant care and garden irrigation timer checks</li>
+              <li data-i18n="tier2_f6">Setting out, cleaning and storing outdoor furniture</li>
+              <li data-i18n="tier2_f7">Airing and ventilation of the home during visits</li>
+              <li data-i18n="tier2_f8">Up to 2 hours per month of craftsman coordination</li>
+              <li data-i18n="tier2_f9">Car battery check and short engine start on request</li>
+              <li data-i18n="tier2_f10">Welcome groceries and fridge stocking (optional extra)</li>
+              <li data-i18n="tier2_f11">Seasonal opening and closing of the property</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-i18n="select_plan_2">Choose this package</a>
+          </div>
+
+          <!-- Package 3 -->
+          <div class="plan">
+            <h3 data-i18n="tier3_title">Premium Rental Management</h3>
+            <p class="plan-desc" data-i18n="tier3_desc">For owners who rent out their home to holiday guests.</p>
+            <div class="price"><span data-i18n="tier3_price">Custom quote</span></div>
+            <p class="price-note" data-i18n="tier3_price_sub">From €350 / month</p>
+            <ul>
+              <li data-i18n="tier3_f1">Keyholding and unlimited access handling</li>
+              <li data-i18n="tier3_f2">Preparation before each stay and inspection after guests leave</li>
+              <li data-i18n="tier3_f3">Turnover management (supervision of cleaning and linen teams)</li>
+              <li data-i18n="tier3_f4">Inventory check after guest departure</li>
+              <li data-i18n="tier3_f5">24/7 guest helpline for urgent household issues</li>
+              <li data-i18n="tier3_f6">Tailored concierge support and local coordination for owners</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="select_plan_3">Request a quote</a>
+          </div>
+        </div>
+
+        <!-- À la carte -->
+        <div class="alacarte">
+          <h3 data-i18n="alacarte_title">À la carte services</h3>
+          <p class="alacarte-intro" data-i18n="alacarte_intro">Additional services available on request to complement your package.</p>
+          <div class="alacarte-grid">
+            <div class="alacarte-item"><span class="ico">🔧</span><span data-i18n="ala_1">Craftsman and supplier coordination</span></div>
+            <div class="alacarte-item"><span class="ico">🚨</span><span data-i18n="ala_2">Emergency call-outs and alarm response</span></div>
+            <div class="alacarte-item"><span class="ico">🚗</span><span data-i18n="ala_3">Car maintenance and battery checks</span></div>
+            <div class="alacarte-item"><span class="ico">📦</span><span data-i18n="ala_4">Receiving deliveries and furniture assembly</span></div>
+            <div class="alacarte-item"><span class="ico">🌿</span><span data-i18n="ala_5">Garden and pool supervision</span></div>
+            <div class="alacarte-item"><span class="ico">🧺</span><span data-i18n="ala_6">Deep cleaning and linen service</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="faq_tag">Good to know</span>
+          <h2 class="section-title" data-i18n="faq_title">Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary data-i18n="faq_1_q">Which areas do you cover?</summary>
+            <p data-i18n="faq_1_a">We cover Vence and the surrounding villages: Saint-Paul-de-Vence, Tourrettes-sur-Loup, Saint-Jeannet, La Colle-sur-Loup and Cagnes-sur-Mer. For properties a little further away, just ask.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq_2_q">How do I receive my reports?</summary>
+            <p data-i18n="faq_2_a">After each visit you receive a short report with photos by email or WhatsApp, whichever you prefer. If anything needs attention, we contact you straight away.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq_3_q">How are my keys kept safe?</summary>
+            <p data-i18n="faq_3_a">Your keys are stored securely and are only handed to craftsmen or suppliers with your agreement.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq_4_q">What does the free consultation include?</summary>
+            <p data-i18n="faq_4_a">A conversation about your property and your needs, ideally with a visit on site. You then receive a written proposal with a monthly price, with no obligation.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq_5_q">Can I combine a package with extra services?</summary>
+            <p data-i18n="faq_5_a">Yes. All à la carte services can be added to any package when you need them, and are always agreed with you in advance.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="contact_tag">Contact</span>
+          <h2 class="section-title" data-i18n="contact_title">Book a free property consultation</h2>
+          <p class="section-intro" data-i18n="contact_subtitle">Tell us about your property and how often you would like it checked. We will suggest a service plan that suits your needs.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 data-i18n="contact_info_title">Direct contact</h3>
+            <div class="info-item">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+              <div><strong data-i18n="info_location_label">Location</strong><span class="val">120 Chemin Sainte Anne, 06140 Vence, France</span></div>
+            </div>
+            <div class="info-item">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+              <div><strong data-i18n="info_email_label">Email</strong><a href="mailto:contact@nordicazur.com">contact@nordicazur.com</a></div>
+            </div>
+            <div class="info-item">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+              <div><strong data-i18n="info_phone_label">Phone / WhatsApp</strong><a href="tel:+33672919159">+33 6 72 91 91 59</a></div>
+            </div>
+            <a href="https://wa.me/33672919159" target="_blank" rel="noopener" class="btn btn-whatsapp" data-i18n="whatsapp_btn">Message us on WhatsApp</a>
+            <div class="qr-box">
+              <img src="qr-whatsapp.svg" alt="QR code: WhatsApp NordicAzur" data-i18n-alt="qr_alt">
+              <div>
+                <strong data-i18n="qr_title">Scan with your phone</strong>
+                <span data-i18n="qr_text">Opens a WhatsApp chat with us directly.</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" action="https://formsubmit.co/contact@nordicazur.com" method="POST">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New enquiry from NordicAzur.com">
+            <input type="hidden" name="_next" value="https://www.nordicazur.com/#contact">
+            <input type="hidden" name="language" id="formLang" value="en">
+
+            <h3 class="form-intro" data-i18n="form_title">Ask for more information</h3>
+            <p class="form-intro-sub" data-i18n="form_subtitle">Fill in a few details and we will get back to you shortly.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name" data-i18n="form_name">Name *</label>
+                <input id="f-name" type="text" name="name" placeholder="Your full name" data-i18n-placeholder="ph_name" required>
+              </div>
+              <div class="form-group">
+                <label for="f-email" data-i18n="form_email">Email *</label>
+                <input id="f-email" type="email" name="email" placeholder="your.email@example.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-phone" data-i18n="form_phone">Phone (optional)</label>
+                <input id="f-phone" type="tel" name="phone" placeholder="+45 ...">
+              </div>
+              <div class="form-group">
+                <label for="f-town" data-i18n="form_town">Town / village of the property</label>
+                <input id="f-town" type="text" name="town" placeholder="e.g. Vence" data-i18n-placeholder="ph_town">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-interest" data-i18n="form_interest">I am interested in</label>
+                <select id="f-interest" name="interested_in">
+                  <option value="Not sure yet" data-i18n="opt_unsure">Not sure yet – please advise me</option>
+                  <option value="Essential Inspection" data-i18n="opt_tier1">Essential Inspection</option>
+                  <option value="Comfort Home" data-i18n="opt_tier2">Comfort Home</option>
+                  <option value="Premium Rental Management" data-i18n="opt_tier3">Premium Rental Management</option>
+                  <option value="A la carte" data-i18n="opt_alacarte">À la carte services only</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="f-contact" data-i18n="form_contact_pref">Preferred contact</label>
+                <select id="f-contact" name="preferred_contact">
+                  <option value="Email" data-i18n="opt_email">Email</option>
+                  <option value="Phone" data-i18n="opt_phone">Phone call</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-msg" data-i18n="form_message">Property details & wishes *</label>
+              <textarea id="f-msg" name="message" rows="5" placeholder="Where is your property, how big is it, and which services are you interested in?" data-i18n-placeholder="ph_message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="form_button">Send message</button>
+            <p class="form-note" data-i18n="form_note">Your details are only used to reply to your enquiry.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">NordicAzur</div>
+          <div class="footer-tagline" data-i18n="footer_tagline">Property care & concierge on the French Riviera</div>
+        </div>
+        <div class="footer-links">
+          <a href="#services" data-i18n="nav_services_f">Services</a>
+          <a href="#about" data-i18n="nav_about_f">About</a>
+          <a href="#pricing" data-i18n="nav_pricing_f">Packages</a>
+          <a href="#faq" data-i18n="nav_faq_f">FAQ</a>
+          <a href="#contact" data-i18n="nav_contact_f">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> NordicAzur · Vence, France · <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p class="ai-disclaimer" data-i18n="ai_disclaimer">This website uses AI-assisted automatic translation to serve our international clients in several languages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/33672919159" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg>
+  </a>
+
+  <!-- Translations (generated by translate.bat — do not edit by hand unless correcting a translation) -->
+  <script src="translations.js"></script>
+  <script>
+    (function () {
+      var SUPPORTED = ["en", "da", "sv", "no", "fr", "de", "nl", "it", "ru"];
+      var T = window.NA_TRANSLATIONS || { source: {}, languages: {} };
+      var norm = function (s) { return (s || "").replace(/\s+/g, " ").trim(); };
+
+      // Remember the English master text of every element
+      var textEls = document.querySelectorAll("[data-i18n]");
+      var attrEls = document.querySelectorAll("[data-i18n-placeholder], [data-i18n-alt]");
+      textEls.forEach(function (el) { el._en = norm(el.textContent); });
+      attrEls.forEach(function (el) {
+        if (el.hasAttribute("data-i18n-placeholder")) el._enPh = el.getAttribute("placeholder");
+        if (el.hasAttribute("data-i18n-alt")) el._enAlt = el.getAttribute("alt");
+      });
+
+      // A translation is only used if it was made from the CURRENT English text.
+      // If the English was changed but not re-translated yet, English is shown instead.
+      function tr(lang, key, en) {
+        if (lang === "en" || !key) return en;
+        var dict = T.languages[lang] || {};
+        if (dict[key] && norm(T.source[key]) === norm(en)) return dict[key];
+        return en;
+      }
+
+      function setLanguage(lang) {
+        if (SUPPORTED.indexOf(lang) === -1) lang = "en";
+        textEls.forEach(function (el) { el.textContent = tr(lang, el.getAttribute("data-i18n"), el._en); });
+        attrEls.forEach(function (el) {
+          if (el._enPh != null) el.setAttribute("placeholder", tr(lang, el.getAttribute("data-i18n-placeholder"), el._enPh));
+          if (el._enAlt != null) el.setAttribute("alt", tr(lang, el.getAttribute("data-i18n-alt"), el._enAlt));
+        });
+        document.documentElement.lang = lang;
+        document.getElementById("langSelect").value = lang;
+        var f = document.getElementById("formLang"); if (f) f.value = lang;
+      }
+
+      var select = document.getElementById("langSelect");
+      select.addEventListener("change", function () {
+        try { localStorage.setItem("nordicazur_lang", select.value); } catch (e) {}
+        setLanguage(select.value);
+      });
+
+      // Initial language: saved choice, then browser language, then English
+      var lang = null;
+      try { lang = localStorage.getItem("nordicazur_lang"); } catch (e) {}
+      if (!lang) {
+        var b = (navigator.language || "en").slice(0, 2).toLowerCase();
+        if (b === "nb" || b === "nn") b = "no";
+        lang = SUPPORTED.indexOf(b) > -1 ? b : "en";
+      }
+      setLanguage(lang);
+
+      // Mobile menu
+      var toggle = document.getElementById("menuToggle"), nav = document.getElementById("mainNav");
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+      });
+      nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); }); });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
