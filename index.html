@@ -42,7 +42,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 132px; }
     body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
@@ -64,9 +64,9 @@
 
     /* ---------- Header ---------- */
     .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 78px; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 120px; padding-top: 0.4rem; padding-bottom: 0.4rem; }
     .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .logo img { height: 58px; width: auto; object-fit: contain; }
+    .logo img { height: 108px; width: auto; max-width: 280px; object-fit: contain; }
     .logo-text { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--primary); }
     .main-nav { display: flex; align-items: center; gap: 1.75rem; }
     .main-nav a { text-decoration: none; font-weight: 500; font-size: 0.92rem; color: var(--text); position: relative; }
@@ -87,7 +87,8 @@
       .main-nav.open { display: flex; }
       .main-nav a { padding: 0.85rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
       .main-nav a::after { display: none; }
-      .logo img { height: 48px; }
+      .logo img { height: 74px; max-width: 200px; }
+      .header-inner { min-height: 84px; }
     }
 
     /* ---------- Hero ---------- */
@@ -420,10 +421,10 @@
           <!-- Founder photo: save a real photo as thomas.jpg next to index.html and it replaces the drawing automatically -->
           <div class="founder">
             <div class="founder-photo">
-              <img src="thomas.jpg" alt="Thomas Holmboe-Lagier, founder of NordicAzur" data-i18n-alt="founder_img_alt" onerror="this.onerror=null;this.src='thomas-avatar.svg'">
+              <img src="thomas.jpg" alt="Thomas Holmboe Bang, founder of NordicAzur" data-i18n-alt="founder_img_alt" onerror="this.onerror=null;this.src='thomas-avatar.svg'">
             </div>
             <div class="founder-card">
-              <strong>Thomas Holmboe-Lagier</strong>
+              <strong>Thomas Holmboe Bang</strong>
               <span data-i18n="founder_role">Founder · Vence</span>
             </div>
           </div>
