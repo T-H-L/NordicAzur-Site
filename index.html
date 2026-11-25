@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<style>.logo img{background:radial-gradient(ellipse 45% 37% at 55% 37%,#bde2f6 0%,#d9eff9 50%,rgba(255,255,255,0) 100%)}</style>
 <!--
   ============================================================
   NordicAzur website — ENGLISH MASTER VERSION
@@ -68,6 +67,7 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 120px; padding-top: 0.4rem; padding-bottom: 0.4rem; }
     .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
     .logo img { height: 108px; width: auto; max-width: 280px; object-fit: contain; }
+    .logo img { background: radial-gradient(ellipse 45% 37% at 55% 37%, #bde2f6 0%, #d9eff9 50%, rgba(255,255,255,0) 100%); } /* soft blue sky behind the logo */
     .logo-text { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--primary); }
     .main-nav { display: flex; align-items: center; gap: 1.75rem; }
     .main-nav a { text-decoration: none; font-weight: 500; font-size: 0.92rem; color: var(--text); position: relative; }
@@ -270,6 +270,10 @@
     .form-intro { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; margin-bottom: 0.25rem; }
     .form-intro-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
 
+    .m-cross { background: var(--accent-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3rem 0; }
+    .m-cross .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; }
+    .m-cross h3 { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; }
+    .m-cross p { color: var(--muted); max-width: 640px; }
     .wa-float { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -8px rgba(0,0,0,.35); transition: transform .2s; }
     .wa-float:hover { transform: scale(1.06); }
     .wa-float svg { width: 30px; height: 30px; }
@@ -289,6 +293,7 @@
         <a href="#how" data-i18n="nav_how">How it works</a>
         <a href="#about" data-i18n="nav_about">About</a>
         <a href="#pricing" data-i18n="nav_pricing">Packages</a>
+        <a href="menage.html" data-i18n="nav_menage">Home cleaning</a>
         <a href="#faq" data-i18n="nav_faq">FAQ</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
@@ -388,6 +393,18 @@
         </div>
       </div>
     </section>
+
+    <!-- ================= MÉNAGE BANNER ================= -->
+    <div class="m-cross">
+      <div class="container">
+        <div>
+          <span class="eyebrow">NordicAzur Ménage</span>
+          <h3 data-i18n="banner_title">Living here all year round?</h3>
+          <p data-i18n="banner_text">Discover NordicAzur Ménage, our home cleaning service in Vence and the surrounding villages, with a 50% tax credit for households taxed in France.</p>
+        </div>
+        <a href="menage.html" class="btn btn-primary" data-i18n="banner_btn">Discover home cleaning</a>
+      </div>
+    </div>
 
     <!-- ================= HOW IT WORKS ================= -->
     <section class="how" id="how">
@@ -697,6 +714,7 @@
           <a href="#services" data-i18n="nav_services_f">Services</a>
           <a href="#about" data-i18n="nav_about_f">About</a>
           <a href="#pricing" data-i18n="nav_pricing_f">Packages</a>
+          <a href="menage.html" data-i18n="nav_menage">Home cleaning</a>
           <a href="#faq" data-i18n="nav_faq_f">FAQ</a>
           <a href="#contact" data-i18n="nav_contact_f">Contact</a>
           <a href="#legal" class="legal-open" data-i18n="legal_link_f">Legal notice</a>
@@ -711,6 +729,7 @@
             <h4 data-i18n="legal_title">Legal notice</h4>
             <p data-i18n="legal_publisher">NordicAzur is the trade name of Thomas Holmboe-Lagier, sole trader (entrepreneur individuel, micro-entreprise), 120 Chemin Sainte Anne, 06140 Vence, France.</p>
             <p><span data-i18n="legal_siret_label">SIRET number:</span> 131 790 826 00013</p>
+            <p><span data-i18n="legal_sap_label">Declared services à la personne provider, declaration no.:</span> SAP131790826</p>
             <p data-i18n="legal_vat">VAT not applicable, article 293 B of the French General Tax Code (CGI).</p>
             <p><span data-i18n="legal_contact_label">Contact:</span> contact@nordicazur.com · +33 6 72 91 91 59</p>
             <p data-i18n="legal_director">Publication director: Thomas Holmboe-Lagier.</p>
@@ -728,7 +747,7 @@
       </details>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="year">2026</span> NordicAzur · Thomas Holmboe-Lagier, EI · SIRET 131 790 826 00013 · Vence, France · <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p>&copy; <span id="year">2026</span> NordicAzur · Thomas Holmboe-Lagier, EI · SIRET 131 790 826 00013 · SAP131790826 · Vence, France · <span data-i18n="footer_rights">All rights reserved.</span></p>
         <p class="ai-disclaimer" data-i18n="ai_disclaimer">This website uses AI-assisted automatic translation to serve our international clients in several languages.</p>
       </div>
     </div>
